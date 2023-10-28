@@ -8,6 +8,26 @@ type BinaryTree struct {
 	Right *BinaryTree
 }
 
+func Find(tree *BinaryTree, x int) (ret bool) {
+	if tree == nil {
+		return false
+	} else if x < tree.Value {
+		if tree.Left == nil {
+			return false
+		} else {
+			return Find(tree.Left, x)
+		}
+	} else if x > tree.Value {
+		if tree.Right == nil {
+			return false
+		} else {
+			return Find(tree.Right, x)
+		}
+	} else {
+		return true
+	}
+}
+
 func Insert(tree *BinaryTree, x int) {
 	if x < tree.Value {
 		if tree.Left == nil {
@@ -32,4 +52,25 @@ func InorderTraversal(tree *BinaryTree) {
 	if tree.Right != nil {
 		InorderTraversal(tree.Right)
 	}
+}
+
+func PreorderTraversal(tree *BinaryTree) {
+	fmt.Println(tree.Value)
+	if tree.Left != nil {
+		InorderTraversal(tree.Left)
+	}
+	if tree.Right != nil {
+		InorderTraversal(tree.Right)
+	}
+}
+
+func PostOrderTraversal(tree *BinaryTree) {
+	if tree.Left != nil {
+		InorderTraversal(tree.Left)
+	}
+	if tree.Right != nil {
+		InorderTraversal(tree.Right)
+	}
+	fmt.Println(tree.Value)
+
 }

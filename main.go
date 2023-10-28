@@ -2,6 +2,7 @@ package main
 
 import (
 	"ds/searching"
+	"fmt"
 )
 
 func main() {
@@ -20,11 +21,12 @@ func main() {
 	// fmt.Println(searching.BinarySearch(arr, 0, len(arr)-1, 2))
 
 	arvore := searching.BinaryTree{Value: 12, Left: nil, Right: nil}
-	searching.Insert(&arvore, 12)
 	searching.Insert(&arvore, 1)
 	searching.Insert(&arvore, 21)
 	searching.Insert(&arvore, 5)
 	searching.Insert(&arvore, 15)
 	searching.Insert(&arvore, 3)
-	searching.InorderTraversal(&arvore)
+	// searching.InorderTraversal(&arvore)
+	// searching.PreorderTraversal(&arvore)
+	fmt.Println(searching.Find(&arvore, 22))
 }
