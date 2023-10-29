@@ -27,6 +27,6 @@ func main() {
 	searching.Insert(&arvore, 15)
 	searching.Insert(&arvore, 3)
 	// searching.InorderTraversal(&arvore)
-	// searching.PreorderTraversal(&arvore)
+	searching.PreorderTraversal(&arvore)
 	fmt.Println(searching.Find(&arvore, 22))
 }

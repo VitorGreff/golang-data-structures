@@ -57,19 +57,19 @@ func InorderTraversal(tree *BinaryTree) {
 func PreorderTraversal(tree *BinaryTree) {
 	fmt.Println(tree.Value)
 	if tree.Left != nil {
-		InorderTraversal(tree.Left)
+		PreorderTraversal(tree.Left)
 	}
 	if tree.Right != nil {
-		InorderTraversal(tree.Right)
+		PreorderTraversal(tree.Right)
 	}
 }
 
 func PostOrderTraversal(tree *BinaryTree) {
 	if tree.Left != nil {
-		InorderTraversal(tree.Left)
+		PostOrderTraversal(tree.Left)
 	}
 	if tree.Right != nil {
-		InorderTraversal(tree.Right)
+		PostOrderTraversal(tree.Right)
 	}
 	fmt.Println(tree.Value)
 
