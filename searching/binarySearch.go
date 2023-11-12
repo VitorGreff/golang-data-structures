@@ -1,11 +1,11 @@
 package searching
 
 import (
-	"ds/sorting"
+	"sort"
 )
 
 func BinarySearch(arr []int, low int, high int, x int) int {
-	arr = sorting.Selectionsort(arr)
+	sort.Ints(arr)
 	if low <= high {
 		mid := (high + low) / 2
 		if arr[mid] == x {
